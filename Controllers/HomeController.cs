@@ -18,7 +18,7 @@ namespace Empresa_Form_Contact.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Productos()
         {
             return View();
         }
