@@ -21,6 +21,7 @@ body {
 .content {
     padding-top: 150px;
     margin-left: 60px;
+    color: #FFF8F1;
 }
 
 .content h1 {
@@ -28,18 +29,19 @@ body {
 }
 
 #btn1 button {
-    width: 150px;
-    height: 32px;
-    background: transparent;
-    border: 1px solid black;
-    letter-spacing: 3px;
+    width: 175px;
+    height: 42px;
+    background-color: #007263;
+    border: 1px solid #007263;
     font-weight: bold;
     transition: 0.5s ease;
     cursor: pointer;
+    color: #FFF8F1;
 }
 
 #btn1 button:hover {
-    background-color: #5CA479;
+    background-color: #2FA796;
+    border: 1px solid #2FA796;
 }
 
 @media screen and (max-width:420px) {
