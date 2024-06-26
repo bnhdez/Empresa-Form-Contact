@@ -15,7 +15,37 @@ body {
     height: 80vh;
     background-image: url('/images/background.jpg');
     background-size: cover;
-    background-position: 60%;
+    background-position: 70%;
+}
+
+.content {
+    padding-top: 150px;
+    margin-left: 60px;
+}
+
+.content h1 {
+    font-size: 50px;
+}
+
+#btn1 button {
+    width: 150px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid black;
+    letter-spacing: 3px;
+    font-weight: bold;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+#btn1 button:hover {
+    background-color: #5CA479;
+}
+
+@media screen and (max-width:420px) {
+    .content h1 {
+        font-size: 30px;
+    }
 }
 
 .contact-form {
