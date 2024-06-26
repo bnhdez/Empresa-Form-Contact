@@ -6,6 +6,14 @@
     padding: 0;
 }
 
+header {
+    background-color: #402E32;
+}
+
+.navbar a {
+    color: #FFF8F1 !important;
+}
+
 body {
     font-family: Arial, sans-serif;
 }
