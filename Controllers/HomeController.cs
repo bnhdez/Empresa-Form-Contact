@@ -23,6 +23,11 @@ namespace Empresa_Form_Contact.Controllers
             return View();
         }
 
+        public IActionResult Servicios()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
