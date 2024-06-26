@@ -50,6 +50,10 @@ body {
     }
 }
 
+#servicios {
+    background-color: #FFF7EB;
+}
+
 .contact-form {
     position: fixed;
     bottom: 0;
