@@ -66,6 +66,15 @@ body {
     background-color: #FFF7EB;
 }
 
+footer {
+    background-color: black;
+    color: #FFF8F1;
+}
+
+footer a {
+    color: #FFF8F1;
+}
+
 .contact-form {
     position: fixed;
     bottom: 0;
