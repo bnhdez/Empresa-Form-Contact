@@ -1,15 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Empresa_Form_Contact.Models;
-
-public partial class Contact
+namespace Empresa_Form_Contact.Models
 {
-    public int Id { get; set; }
+    public partial class Contact
+    {
+        public int Id { get; set; }
 
-    public string Nombre { get; set; } = null!;
+        [Required(ErrorMessage = "El nombre es obligatorio")]
+        [StringLength(50)]
+        public string Nombre { get; set; } = string.Empty;
 
-    public string Correo { get; set; } = null!;
+        [Required(ErrorMessage = "El correo es obligatorio")]
+        [EmailAddress(ErrorMessage = "Correo inválido")]
+        [StringLength(100)]
+        public string Correo { get; set; } = string.Empty;
 
-    public string? Mensaje { get; set; }
+        [Required(ErrorMessage = "El mensaje es obligatorio")]
+        [StringLength(250)]
+        public string Mensaje { get; set; } = string.Empty;
+    }
 }
