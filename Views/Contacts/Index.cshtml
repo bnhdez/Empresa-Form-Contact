@@ -4,9 +4,10 @@
     ViewData["Title"] = "Contacto";
 }
 
-<h2>Contacto</h2>
-
+<div class="container-fluid d-flex align-items-center justify-content-center py-4" id="content-form">
+    <!-- Formulario Contacto -->
 <div class="contact-form">
+    <h2 class="text-center">Contacto</h2>
     <form asp-action="SubmitContactForm" method="post" class="needs-validation" novalidate>
         <div class="form-group">
             <label asp-for="Nombre" class="form-label"></label>
@@ -39,6 +40,7 @@
             <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
     </form>
+</div>
 </div>
 
 @section Scripts {
