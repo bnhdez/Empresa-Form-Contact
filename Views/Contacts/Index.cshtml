@@ -5,34 +5,42 @@
 }
 
 <div class="container-fluid d-flex align-items-center justify-content-center py-4" id="content-form">
-    <!-- Formulario Contacto -->
-    <div class="contact-form">
-        <form asp-action="SubmitContactForm" method="post" class="needs-validation" novalidate>
-            <div class="form-group">
-                <label asp-for="Nombre" class="form-label"></label>
-                <input asp-for="Nombre" class="form-control" required />
-                <div class="invalid-feedback">
-                    Por favor, ingrese su nombre
-                </div>
+    <div class="container row w-100">
+        <div class="col-xl-8 col-12 d-flex align-items-center justify-content-center p-0">
+            <img src="~/images/contact-thumbnail.jpg" class="img-fluid" alt="Contact Thumnail" style=" max-height: 100%; width: auto;" />
+        </div>
+                <!-- Formulario Contacto -->
+        <div class="col-xl-4  col-12 d-flex align-items-center justify-content-center p-0">
+            <div class="contact-form d-flex flex-column justify-content-center">
+                <h3 class="text-center">Contacto</h3>
+                <form asp-action="SubmitContactForm" method="post" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="form-label"></label>
+                        <input asp-for="Nombre" class="form-control" required />
+                        <div class="invalid-feedback">
+                            Por favor, ingrese su nombre
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Correo" class="form-label mt-2"></label>
+                        <input asp-for="Correo" class="form-control" required />
+                        <div class="invalid-feedback">
+                            Por favor, ingrese su correo
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Mensaje" class="form-label mt-2"></label>
+                        <textarea asp-for="Mensaje" class="form-control" rows="3" required></textarea>
+                        <div class="invalid-feedback">
+                            Por favor, escriba un mensaje
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="Correo" class="form-label mt-2"></label>
-                <input asp-for="Correo" class="form-control" required />
-                <div class="invalid-feedback">
-                    Por favor, ingrese su correo
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="Mensaje" class="form-label mt-2"></label>
-                <textarea asp-for="Mensaje" class="form-control" rows="3" required></textarea>
-                <div class="invalid-feedback">
-                    Por favor, escriba un mensaje
-                </div>
-            </div>
-            <div class="d-flex justify-content-center mt-3">
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
