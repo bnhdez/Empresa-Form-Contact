@@ -1,0 +1,48 @@
+﻿@model Empresa_Form_Contact.Models.Contact
+
+@{
+    ViewData["Title"] = "Contacto";
+}
+
+<h2>Contacto</h2>
+
+<div class="contact-form">
+    <form asp-action="SubmitContactForm" method="post" class="needs-validation" novalidate>
+        <div class="form-group">
+            <label asp-for="Nombre" class="form-label"></label>
+            <input asp-for="Nombre" class="form-control" required />
+            <div class="input-group has-validation">
+                <div class="invalid-feedback">
+                    Por favor, ingrese su nombre
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Correo" class="form-label mt-2"></label>
+            <input asp-for="Correo" class="form-control" required />
+            <div class="input-group has-validation">
+                <div class="invalid-feedback">
+                    Por favor, ingrese su correo
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Mensaje" class="form-label mt-2"></label>
+            <textarea asp-for="Mensaje" class="form-control" rows="3" required></textarea>
+            <div class="input-group has-validation">
+                <div class="invalid-feedback">
+                    Por favor, escriba un mensaje
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
