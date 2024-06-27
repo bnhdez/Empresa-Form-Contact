@@ -6,45 +6,60 @@
 
 <div class="container-fluid d-flex align-items-center justify-content-center py-4" id="content-form">
     <!-- Formulario Contacto -->
-<div class="contact-form">
-    <h2 class="text-center">Contacto</h2>
-    <form asp-action="SubmitContactForm" method="post" class="needs-validation" novalidate>
-        <div class="form-group">
-            <label asp-for="Nombre" class="form-label"></label>
-            <input asp-for="Nombre" class="form-control" required />
-            <div class="input-group has-validation">
+    <div class="contact-form">
+        <form asp-action="SubmitContactForm" method="post" class="needs-validation" novalidate>
+            <div class="form-group">
+                <label asp-for="Nombre" class="form-label"></label>
+                <input asp-for="Nombre" class="form-control" required />
                 <div class="invalid-feedback">
                     Por favor, ingrese su nombre
                 </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Correo" class="form-label mt-2"></label>
-            <input asp-for="Correo" class="form-control" required />
-            <div class="input-group has-validation">
+            <div class="form-group">
+                <label asp-for="Correo" class="form-label mt-2"></label>
+                <input asp-for="Correo" class="form-control" required />
                 <div class="invalid-feedback">
                     Por favor, ingrese su correo
                 </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Mensaje" class="form-label mt-2"></label>
-            <textarea asp-for="Mensaje" class="form-control" rows="3" required></textarea>
-            <div class="input-group has-validation">
+            <div class="form-group">
+                <label asp-for="Mensaje" class="form-label mt-2"></label>
+                <textarea asp-for="Mensaje" class="form-control" rows="3" required></textarea>
                 <div class="invalid-feedback">
                     Por favor, escriba un mensaje
                 </div>
             </div>
-        </div>
-        <div class="d-flex justify-content-center mt-3">
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </div>
-    </form>
-</div>
+            <div class="d-flex justify-content-center mt-3">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+    <!-- Script personalizado para habilitar la validación de Bootstrap -->
+    <script>
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                var forms = document.getElementsByClassName('needs-validation');
+                // Iterar sobre cada formulario y prevenir el envío si no es válido
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        // Si el formulario no es válido, prevenir el envío y propagación del evento
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        // Añadir la clase 'was-validated' para mostrar los mensajes de validación de Bootstrap
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
 }
