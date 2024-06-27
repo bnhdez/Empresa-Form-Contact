@@ -12,24 +12,24 @@
                 <!-- Formulario Contacto -->
         <div class="col-xl-4  col-12 d-flex align-items-center justify-content-center p-0">
             <div class="contact-form d-flex flex-column justify-content-center">
-                <h3 class="text-center">Contacto</h3>
+                <h3 class="text-center display-5">Contacto</h3>
                 <form asp-action="SubmitContactForm" method="post" class="needs-validation" novalidate>
                     <div class="form-group">
-                        <label asp-for="Nombre" class="form-label"></label>
+                        <label asp-for="Nombre" class="form-label h5"></label>
                         <input asp-for="Nombre" class="form-control" required />
                         <div class="invalid-feedback">
                             Por favor, ingrese su nombre
                         </div>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Correo" class="form-label mt-2"></label>
+                        <label asp-for="Correo" class="form-label h5 mt-2"></label>
                         <input asp-for="Correo" class="form-control" required />
                         <div class="invalid-feedback">
                             Por favor, ingrese su correo
                         </div>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Mensaje" class="form-label mt-2"></label>
+                        <label asp-for="Mensaje" class="form-label h5 mt-2"></label>
                         <textarea asp-for="Mensaje" class="form-control" rows="3" required></textarea>
                         <div class="invalid-feedback">
                             Por favor, escriba un mensaje
